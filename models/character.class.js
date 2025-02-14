@@ -1,7 +1,7 @@
 class Character extends MovableObjects {
-    y = 225;
-    height = 200;
-    width = 100;
+    y = 180;
+    height = 250;
+    width = 150;
     world;
     speed = 10;
 
