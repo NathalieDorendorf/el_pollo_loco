@@ -1,4 +1,4 @@
-class Coins extends DrawableObjects {
+class Coins extends MovableObjects {
     IMAGES_COIN = [
         'assets/img/8_coin/coin_1.png',
         'assets/img/8_coin/coin_2.png'
@@ -10,7 +10,7 @@ class Coins extends DrawableObjects {
         
         this.x = 400 + Math.random() * 700; 
 
-        animate();
+        this.animate();
     }
 
     animate() {

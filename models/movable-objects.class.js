@@ -1,7 +1,8 @@
 class MovableObjects extends DrawableObjects {
-    speed = 0.15;
     otherDirection = false;
+    speed = 0.15;
     speedY = 0;
+    speedX = 0;
     acceleration = 1;
     energy = 100;
     lastHit = 0;
@@ -38,7 +39,11 @@ class MovableObjects extends DrawableObjects {
     }
 
     isAboveGround() {
-        return this.y < 180;
+        if (this instanceof ThrowableObjects) { // ThrowableObject should always fall
+            return true;
+        } else {
+            return this.y < 180;
+        }
     }
 
     jump() {

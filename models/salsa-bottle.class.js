@@ -1,3 +1,0 @@
-class SalsaBottle extends ThrowableObjects {
-
-}
