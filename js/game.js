@@ -10,7 +10,6 @@ function init() {
 }
 
 window.addEventListener("keydown", (event) => {
-    console.log(event);
     if (event.key == 39 || event.key === 'ArrowRight' || event.key === 'd') {
         keyboard.RIGHT = true;
     }
@@ -26,7 +25,6 @@ window.addEventListener("keydown", (event) => {
 });
 
 window.addEventListener("keyup", (event) => {
-    console.log(event);
     if (event.key == 39 || event.key === 'ArrowRight' || event.key === 'd') {
         keyboard.RIGHT = false;
     }
