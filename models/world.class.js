@@ -13,10 +13,7 @@ class World {
 
         this.draw();
         this.setWorld();
-    }
-
-    setWorld() {
-        this.character.world = this;
+        this.checkCollisions();
     }
 
     draw() {
@@ -67,4 +64,19 @@ class World {
         this.ctx.restore();
     }
 
+    setWorld() {
+        this.character.world = this;
+    }
+
+    checkCollisions() {
+        setInterval(() => {
+            this.level.enemies.forEach(enemy => {
+                if (this.character.isColliding(enemy)) {
+                    console.log('Collision with Character', enemy);
+                    this.character.hit();
+                    console.log(this.character.energy);
+                }
+            });
+        }, 200);
+    }
 }

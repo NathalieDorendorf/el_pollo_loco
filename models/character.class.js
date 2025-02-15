@@ -81,7 +81,7 @@ class Character extends MovableObjects {
         this.applyGravity();
         this.animate();
         this.moving();
-        this.jumping();
+        this.animateConditions();
     }
 
     animate() {
@@ -107,9 +107,11 @@ class Character extends MovableObjects {
         }, 1000 / 60);
     }
 
-    jumping() {
+    animateConditions() {
         setInterval(() => {
-            if (this.isAboveGround()) {
+            if (this.isDead()) {
+                this.playAnimation(this.IMAGES_DEAD);
+            } else if (this.isAboveGround()) {
                 this.playAnimation(this.IMAGES_JUMPING);
             } else {
                 if (this.world.keyboard.RIGHT || this.world.keyboard.LEFT) {
